@@ -5,11 +5,14 @@ A simple wrapper written in Python. Prompt to choose a session when you need.
 ## Usage
 
 Default usage
-> ./prompt_tmux.py
+```
+./prompt_tmux.py
+```
 
 Flags
-> ./prompt_tmux.py -h
-> usage: prompt_tmux.py [-h] [--no_fast_start] [--no_prompt_again]
+```
+./prompt_tmux.py -h
+usage: prompt_tmux.py [-h] [--no_fast_start] [--no_prompt_again]
 
 Prompt to choose a tmux session, cannot be run within a tmux window.
 
@@ -20,3 +23,4 @@ optional arguments:
                      anyway
   --no_prompt_again  Swith this flag to let the program exit after detach
                      sessions.
+```
