@@ -90,12 +90,20 @@ class TuiPrompt:
         # one.
         self._final_choice = available[0][0]
         return
-    urwid.MainLoop(
+    self._loop = urwid.MainLoop(
         self.WrapButtons(available + [('', 'Create new tmux session')]),
-        palette=[('reversed', 'standout', '')]).run()
+        palette=[('reversed', 'standout', '')],
+        unhandled_input=self.UnHandledInput)
+    self._loop.run()
 
   def get(self):
     return self._final_choice
+
+  def UnHandledInput(self, k):
+    if k == 'j':
+      self._loop.process_input(['down'])
+    elif k == 'k':
+      self._loop.process_input(['up'])
 
 
 if __name__ == '__main__':
